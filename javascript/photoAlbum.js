@@ -1,15 +1,27 @@
 (function() {
-  'use strict';
-
-    console.log($('main'));
+    'use strict';
 
     $('.photos')
         .find('li')
-          .on('click', function zoomIng(eventObj) {
+        .on('click', function zoomIng(eventObj) {
             $(this).toggleClass('zoomed')
             $(this).closest('main').toggleClass('zooming')
-            $(this).append( $('nav') );
+            $(this).append($('nav'))
 
-    });
+        });
+
+    $('.next')
+        .on('click', function goRight(e) {
+
+            $(this).parent().parent().next('li')
+                .toggleClass('zoomed')
+                .append($('nav'))
+                .stopPropagation()
+        });
+
+    // $('.previous')
+    //   .on('click', function goLeft(eventObj) {
+
+    //   });
 
 })();
