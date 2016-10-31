@@ -16,12 +16,16 @@
             $(this).parent().parent().next('li')
                 .toggleClass('zoomed')
                 .append($('nav'))
-                .stopPropagation()
+
         });
 
-    // $('.previous')
-    //   .on('click', function goLeft(eventObj) {
+    $('.previous')
+      .on('click', function goLeft(e) {
 
-    //   });
+        $(this).parent().parent().prev('li')
+            .toggleClass('zoomed')
+            .append($('nav'))
+          
+      });
 
 })();
