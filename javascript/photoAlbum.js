@@ -4,28 +4,26 @@
     $('.photos')
         .find('li')
         .on('click', function zoomIng(eventObj) {
-            $(this).toggleClass('zoomed')
-            $(this).closest('main').toggleClass('zooming')
-            $(this).append($('nav'))
 
+            $(this).toggleClass('zoomed');
+            $('main').addClass('zooming')
+            $('.zoomed').append($('nav'))
+            console.log(this);
         });
-
     $('.next')
-        .on('click', function goRight(e) {
+        .on('click', function goRight(eventObj) {
 
             $(this).parent().parent().next('li')
-                .toggleClass('zoomed')
-                .append($('nav'))
-
+            .toggleClass('zoomed')
+            .append($('nav'));
         });
 
     $('.previous')
-      .on('click', function goLeft(e) {
+        .on('click', function goLeft(eventObj) {
 
-        $(this).parent().parent().prev('li')
+            $(this).parent().parent().prev('li')
             .toggleClass('zoomed')
-            .append($('nav'))
-          
-      });
-
+            .append($('nav'));
+        });
+    
 })();
