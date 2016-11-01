@@ -25,5 +25,14 @@
             .toggleClass('zoomed')
             .append($('nav'));
         });
-    
+
+        //Create a function to remove the class .zooming when finished with the
+        //and also when the image ('ul') is clicked
+        
+    $('.zooming')
+      .on('click', function removeMain(eventObj) {
+            $(this).parent()
+            .toggleClass('zooming');
+
+      })
 })();
